@@ -1,6 +1,6 @@
-name: "EI"
-displayName: "[orange]Expanded [gray]Industries"
-author: "[green]W[orange]M[brown]F [yellow]Industries"
-description: "Lots of crazy stuff :>"
-version: "1.5 Alpha"
-minGameVersion: 136
+name: "hello-mod"
+displayName: "Hello Mod"
+author: "skyksit@gmail.com"
+description: "my mindustry mod, i like mindustry"
+version: "1.0"
+minGameVersion: 137
