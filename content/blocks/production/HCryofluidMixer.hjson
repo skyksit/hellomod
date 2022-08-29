@@ -7,13 +7,16 @@ drawer: {
       suffix: -bottom
     }
     {
+      type: DrawLiguidTile
+      drawLiquid: water
+    }
+    {
       type: DrawDefault
     }
     {
       type: DrawLiquidRegion
       drawLiquid: cryofluid
       suffix: -liquid
-      drawLiquidLight: true
     }
   ]
 }
