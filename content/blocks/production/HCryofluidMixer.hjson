@@ -10,9 +10,13 @@ drawer: {
       type: DrawDefault
     }
     {
-      type: DrawLiquidRegion
+      type: DrawLiquidTile
       drawLiquid: cryofluid
-      suffix: -liquid
+      drawLiquidLight: true
+    }
+    {
+      type: DrawLiquidTile
+      drawLiquid: water
     }
   ]
 }
