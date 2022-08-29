@@ -1,0 +1,53 @@
+type: ItemTurret
+health: 1540
+targetGround: true
+targetAir: false
+hasItems: true
+solid: true
+shootSound: artillery
+reload: 150
+ammoPerShot: 1.0
+range: 600
+size: 3
+shots: 1 
+shootShake: 1.2
+recoilAmount: 4.7
+rotateSpeed: 100
+
+ammoTypes: {
+   blast-compound: { 
+      type: ArtilleryBulletType
+      width: 16
+      height: 16
+      damage: 200
+      splashDamage: 50
+      splashDamageRadius: 24
+      buildingDamageMultiplier: 3.25
+      collides: true
+      lifetime: 120
+      speed: 5
+      ammoMultiplier: 4
+      status: blasted
+      trailMult: 0.5
+      fragBullets: 3
+      fragBullet: {
+         type: ArtilleryBulletType
+         damage: 10
+         splashDamage: 10
+         splashDamageRadius: 12
+         buildingDamageMultiplier: 3.25
+         collides: true
+         lifetime: 32
+         speed: 2.5
+      }
+   }
+}
+requirements: [
+  thorium/150
+  graphite/120
+  silicon/70
+  titanium/185
+]
+
+category: turret
+research: foreshadow
