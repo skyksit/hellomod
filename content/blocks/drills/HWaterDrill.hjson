@@ -16,5 +16,5 @@ requirements: [
 consumes: {
   liquid: water/0.2
 }
-category: drills
+category: production
 research: blast-drill
