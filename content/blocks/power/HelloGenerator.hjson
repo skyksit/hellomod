@@ -2,13 +2,19 @@ type: ConsumeGenerator
 health: 2700
 size: 5
 hasItems: true
-itemDuration: 400
+itemDuration: 1200
 powerProduction: 50
 itemCapacity: 10
 requirements: [
-  copper/200
-  lead/200
-  graphite/100
+  titanium/1200
+  thorium/1200
 ]
+consumes: {
+  items: {
+    items: [
+      thorium/1
+    ]
+  }
+}
 category: power
 research: rtg-generator
