@@ -4,7 +4,7 @@ tier: 5
 drillTime: 240
 hasItems: true
 hasLiquids: true
-liquidBoostIntensity: 1.0
+liquidBoostIntensity: 1.5
 hasPower: false
 drawRim: true
 heatColor: F6FFB2
