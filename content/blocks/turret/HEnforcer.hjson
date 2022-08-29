@@ -4,7 +4,7 @@ shootSound: laser
 size: 3
 range: 200
 recoilAmount: 3
-powerUse: 2.6
+power: 2
 reload: 160
 chargeTime: 40
 chargeMaxDelay: 30
