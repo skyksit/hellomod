@@ -1,0 +1,20 @@
+type: Drill
+size: 4
+tier: 5
+drillTime: 240
+hasItems: true
+hasLiquids: true
+liquidBoostIntensity: 1.0
+hasPower: false
+drawRim: true
+heatColor: F6FFB2
+requirements: [
+  thorium/70
+  titanium/70
+  silicon/50
+]
+consumes: {
+  liquid: water/0.2
+}
+category: drills
+research: blast-drill

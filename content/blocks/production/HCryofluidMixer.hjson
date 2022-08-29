@@ -7,10 +7,6 @@ drawer: {
       suffix: -bottom
     }
     {
-      type: DrawLiguidTile
-      drawLiquid: water
-    }
-    {
       type: DrawDefault
     }
     {
