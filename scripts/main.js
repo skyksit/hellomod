@@ -1,9 +1,4 @@
-const myDialog = new BaseDialog("Dialog Title");
-
-myDialog.addCloseButton();
-
-myDialog.cont.add(Vars.state.getSector());
-
-myDialog.show();
-
-// Events.fire(new SectorInvasionEvent(sector))
+Events.on(WorldLoadEvent, event => {
+  var text = Vars.state.getSector()
+  Vars.ui.hudfrag.showToast(text)
+}
