@@ -1,12 +1,12 @@
 Events.on(ClientLoadEvent, (event) => {
-  var text = Vars.state.getSector();
-  Vars.ui.hudfrag.showToast(text);
+  var sectors = Vars.state.getSector();
+  Vars.ui.hudfrag.showToast(sectors);
 
   const myDialog = new BaseDialog("Dialog Title");
   // Add "go back" button
   myDialog.addCloseButton();
   // Add text to the main content
-  myDialog.cont.add("Goodbye.");
+  myDialog.cont.add(sectors);
   // Show dialog
   myDialog.show();
 });
