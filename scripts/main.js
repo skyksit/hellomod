@@ -1,11 +1,9 @@
 Events.on(ClientLoadEvent, (event) => {
-  var sector198 = Planets.serpulo.getSector(198);
-
   const myDialog = new BaseDialog("Dialog Title");
   // Add "go back" button
   myDialog.addCloseButton();
   // Add text to the main content
-  myDialog.cont.add(sector198.name());
+  myDialog.cont.add(Planets.serpulo.getLastSector().id);
   // Show dialog
   myDialog.show();
 });
