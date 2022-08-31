@@ -5,6 +5,7 @@ Events.on(ClientLoadEvent, (e) => {
   var sectors = Planets.serpulo.sectors;
 
   sectors[223].generateEnemyBase = true;
+  sectors[223].loadInfo();
   sectors[223].info.winWave = 70;
 
   const myDialog = new BaseDialog("Dialog Title");
