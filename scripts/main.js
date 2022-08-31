@@ -11,7 +11,7 @@ Events.on(ClientLoadEvent, (e) => {
   myDialog.cont.add("winWave =  " + winWave);
   myDialog.cont.add("hasSector =  " + hasSector);
   myDialog.cont.add("startSector =  " + startSector);
-  myDialog.cont.add("sectors.length = " + sectors.length);
+  myDialog.cont.add("sectors.size = " + sectors.size);
   // Show dialog
   myDialog.show();
 });
