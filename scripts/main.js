@@ -12,9 +12,7 @@ Events.on(ClientLoadEvent, (e) => {
   // Add "go back" button
   myDialog.addCloseButton();
   // Add text to the main content
-  myDialog.cont.add("winWave =  " + winWave);
-  myDialog.cont.add("hasSector =  " + hasSector);
-  myDialog.cont.add("startSector =  " + startSector);
+  myDialog.cont.add("sectors[223].info.winWave =  " + sectors[223].info.winWave);
   myDialog.cont.add("sectors.size = " + sectors.size);
   // Show dialog
   myDialog.show();
