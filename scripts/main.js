@@ -1,4 +1,4 @@
-Events.on(ClientLoadEvent, (event) => {
+Events.on(TurnEvent, (event) => {
   var startid = Planets.serpulo.startSector;
   const myDialog = new BaseDialog("Dialog Title");
   // Add "go back" button
