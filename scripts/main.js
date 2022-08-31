@@ -1,10 +1,10 @@
-Events.on(WorldLoadEvent, (event) => {
-  var wavetime = Vars.state.wavetime;
+Events.on(ClientLoadEvent, (event) => {
+  var winWave = Vars.state.rules.winWave;
   const myDialog = new BaseDialog("Dialog Title");
   // Add "go back" button
   myDialog.addCloseButton();
   // Add text to the main content
-  myDialog.cont.add(wavetime);
+  myDialog.cont.add(winWave);
   // Show dialog
   myDialog.show();
 });
