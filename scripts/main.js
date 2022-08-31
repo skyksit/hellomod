@@ -10,7 +10,7 @@ Events.on(WorldLoadEvent, (e) => {
   // Add "go back" button
   myDialog.addCloseButton();
   // Add text to the main content
-  myDialog.cont.add("sectors[223].id = " + s223.id);
+  myDialog.cont.add("sectors[223].info.winWave = " + s223.info.winWave);
   myDialog.cont.add("sectors.size = " + sectors.size);
   // Show dialog
   myDialog.show();
