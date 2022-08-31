@@ -1,10 +1,10 @@
-Events.on(ClientLoadEvent, (event) => {
+Events.on(ClientLoadEvent, (e) => {
   var winWave = Vars.state.rules.winWave;
   const myDialog = new BaseDialog("Dialog Title");
   // Add "go back" button
   myDialog.addCloseButton();
   // Add text to the main content
-  myDialog.cont.add(winWave);
+  myDialog.cont.add(" " + winWave);
   // Show dialog
   myDialog.show();
 });
