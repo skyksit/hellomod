@@ -5,7 +5,6 @@ Events.on(ClientLoadEvent, (e) => {
   var sectors = Planets.serpulo.sectors;
 
   sectors[223].generateEnemyBase = true;
-  sectors[223].loadInfo();
 
   const myDialog = new BaseDialog("Dialog Title");
   // Add "go back" button
