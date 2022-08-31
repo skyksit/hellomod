@@ -4,14 +4,13 @@ Events.on(ClientLoadEvent, (e) => {
   var startSector = Planets.serpulo.startSector;
   var sectors = Planets.serpulo.sectors;
 
-  sectors[223].generateEnemyBase = true;
+  var s223 = sectors[223];
 
   const myDialog = new BaseDialog("Dialog Title");
   // Add "go back" button
   myDialog.addCloseButton();
   // Add text to the main content
-  myDialog.cont.add("sectors[223].id =  " + sectors[223].id);
-  myDialog.cont.add("sectors[223].name() =  " + sectors[223].name());
+  myDialog.cont.add("sectors[223].id =  " + s223.id);
   myDialog.cont.add("sectors.size = " + sectors.size);
   // Show dialog
   myDialog.show();
