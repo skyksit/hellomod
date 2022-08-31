@@ -10,7 +10,7 @@ Events.on(ClientLoadEvent, (e) => {
   // Add "go back" button
   myDialog.addCloseButton();
   // Add text to the main content
-  myDialog.cont.add("sectors[223].id =  " + s223.id);
+  myDialog.cont.add("sectors[223].id = ");
   myDialog.cont.add("sectors.size = " + sectors.size);
   // Show dialog
   myDialog.show();
