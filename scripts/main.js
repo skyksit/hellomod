@@ -11,6 +11,7 @@ Events.on(WorldLoadEvent, (e) => {
   myDialog.addCloseButton();
   // Add text to the main content
   myDialog.cont.add("sectors[223].info.wave = " + s223.info.wave);
+  myDialog.cont.add("winWave = " + Vars.state.rules.winWave);
   myDialog.cont.add("sectors.size = " + sectors.size);
   // Show dialog
   myDialog.show();
