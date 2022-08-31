@@ -4,7 +4,7 @@ Events.on(WorldLoadEvent, (e) => {
   var startSector = Planets.serpulo.startSector;
   var sectors = Planets.serpulo.sectors;
 
-  var s223 = sectors[223];
+  //var s223 = sectors[223];
 
   const myDialog = new BaseDialog("Dialog Title");
   // Add "go back" button
