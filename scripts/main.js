@@ -1,10 +1,10 @@
-Events.on(TurnEvent, (event) => {
-  var startid = Planets.serpulo.startSector;
+Events.on(WorldLoadEvent, (event) => {
+  var wavetime = Vars.state.wavetime;
   const myDialog = new BaseDialog("Dialog Title");
   // Add "go back" button
   myDialog.addCloseButton();
   // Add text to the main content
-  myDialog.cont.add(startid);
+  myDialog.cont.add(wavetime);
   // Show dialog
   myDialog.show();
 });
