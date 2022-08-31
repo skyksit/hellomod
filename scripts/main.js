@@ -6,7 +6,6 @@ Events.on(ClientLoadEvent, (e) => {
 
   sectors[223].generateEnemyBase = true;
   sectors[223].loadInfo();
-  sectors[223].info.winWave = 70;
 
   const myDialog = new BaseDialog("Dialog Title");
   // Add "go back" button
