@@ -1,12 +1,14 @@
 Events.on(ClientLoadEvent, (e) => {
   var winWave = Vars.state.rules.winWave;
   var hasSector = Vars.state.hasSector();
+  var sectorSeed = Planets.serpulo.sectorSeed;
   const myDialog = new BaseDialog("Dialog Title");
   // Add "go back" button
   myDialog.addCloseButton();
   // Add text to the main content
   myDialog.cont.add("winWave =  " + winWave);
   myDialog.cont.add("hasSector =  " + hasSector);
+  myDialog.cont.add("sectorSeed =  " + sectorSeed);
   // Show dialog
   myDialog.show();
 });
