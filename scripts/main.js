@@ -1,4 +1,4 @@
-Events.on(ClientLoadEvent, (e) => {
+Events.on(WorldLoadEvent, (e) => {
   var winWave = Vars.state.rules.winWave;
   var hasSector = Vars.state.hasSector();
   var startSector = Planets.serpulo.startSector;
