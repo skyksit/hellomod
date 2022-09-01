@@ -29,10 +29,29 @@ Events.on(ClientLoadEvent, () => {
           t.button("Redirect", Icon.upOpen, () => {
             let sectors = Planets.serpulo.sectors;
             let groundZero = sectors.get(15);
-            uiPlanet.showSelect(groundZero, (d) => {
+            uiPlanet.showSelect(groundZero, (selectedSector) => {
               sectors.each((e) => {
-                e.info.destination = d;
+                e.info.destination = selectedSector;
               });
+            });
+          });
+
+          // One Click All Sectors Destination Sector Redirect
+          t.button("Redirect", Icon.upOpen, () => {
+            let sectors = Planets.serpulo.sectors;
+            let groundZero = sectors.get(15);
+            uiPlanet.showSelect(groundZero, (selectedSector) => {
+              sectors.each((e) => {
+                e.info.destination = selectedSector;
+              });
+            });
+          });
+          //Invasion Sector when you click Sector
+          t.button("Invasion", Icon.upOpen, () => {
+            let sectors = Planets.serpulo.sectors;
+            let groundZero = sectors.get(15);
+            uiPlanet.showSelect(groundZero, (selectedSector) => {
+              Events.fire(new SectorInvasionEvent(selectedSector));
             });
           });
         })
