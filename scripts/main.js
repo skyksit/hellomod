@@ -53,10 +53,6 @@ Events.on(ClientLoadEvent, () => {
                 Math.floor(Math.random() * (20 - 10) + 10);
 
               Vars.ui.hudfrag.showToast("waveMax = " + waveMax);
-              Vars.ui.hudfrag.showToast(
-                "selectedSector.isBeingPlayed() = " +
-                  selectedSector.isBeingPlayed()
-              );
 
               if (selectedSector.isBeingPlayed()) {
                 varsState.rules.winWave = waveMax;
