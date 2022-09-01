@@ -66,6 +66,7 @@ Events.on(ClientLoadEvent, () => {
                 selectedSector.info.winWave = waveMax;
                 selectedSector.info.waves = true;
                 selectedSector.info.attack = false;
+                selectedSector.saveInfo();
               }
               Events.fire(new SectorInvasionEvent(selectedSector));
             });
@@ -77,22 +78,6 @@ Events.on(ClientLoadEvent, () => {
 });
 /**
  * 
-                //     let waveMax = Math.max(
-                //       selectedSector.info.winWave,
-                //       selectedSector.isBeingPlayed()
-                //         ? state.wave
-                //         : selectedSector.info.wave + selectedSector.info.wavesPassed) + Math.floor((Math.random() * (20 - 10)) + 10);
-
-                //     if(selectedSector.isBeingPlayed()) {
-                //       state.rules.winWave = waveMax;
-                //       state.rules.waves = true;
-                //       state.rules.attackMode = false;
-                //     } else {
-                //       selectedSector.info.winWave = waveMax;
-                //       selectedSector.info.waves = true;
-                //       selectedSector.info.attack = false;
-                //       selectedSector.saveInfo();
-                //     }
  //serpulo presets
 const goldMountains = new SectorPreset("goldMountains", Planets.serpulo, 172);
 goldMountains.captureWave = 30;
