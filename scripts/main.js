@@ -41,11 +41,22 @@ Events.on(ClientLoadEvent, () => {
           t.button("Invasion", Icon.upOpen, () => {
             let sectors = Planets.serpulo.sectors;
             let groundZero = sectors.get(15);
-            // let state = Vars.state;
-            Vars.ui.hudfrag.showToast("" + Vars.state.wave);
-              uiPlanet.showSelect(groundZero, (selectedSector) => {
-                Events.fire(new SectorInvasionEvent(selectedSector));
-              });
+            let varsState = Vars.state;
+            Vars.ui.hudfrag.showToast("varsState.wave = " + varsState.wave);
+            uiPlanet.showSelect(groundZero, (selectedSector) => {
+              let selectedSectorWave = selectedSector.isBeingPlayed()
+                ? varsState.wave
+                : selectedSector.info.wave + selectedSector.info.wavesPassed;
+              Vars.ui.hudfrag.showToast(
+                "selectedSectorWave = " + selectedSectorWave
+              );
+              let waveMax = Math.max(
+                selectedSector.info.winWave,
+                selectedSectorWave
+              );
+              Vars.ui.hudfrag.showToast("waveMax = " + waveMax);
+              Events.fire(new SectorInvasionEvent(selectedSector));
+            });
           });
         })
       )
