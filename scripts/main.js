@@ -41,7 +41,7 @@ Events.on(ClientLoadEvent, () => {
           t.button("Invasion", Icon.upOpen, () => {
             let sectors = Planets.serpulo.sectors;
             let groundZero = sectors.get(15);
-            let state = Vars.state;
+            // let state = Vars.state;
 
             //   uiPlanet.showSelect(groundZero, (selectedSector) => {
             //     let waveMax = Math.max(
