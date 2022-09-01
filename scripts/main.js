@@ -42,7 +42,7 @@ Events.on(ClientLoadEvent, () => {
             let sectors = Planets.serpulo.sectors;
             let groundZero = sectors.get(15);
             // let state = Vars.state;
-
+            Vars.ui.hudfrag.showToast("" + Vars.state.wave);
               uiPlanet.showSelect(groundZero, (selectedSector) => {
                 Events.fire(new SectorInvasionEvent(selectedSector));
               });
@@ -53,6 +53,23 @@ Events.on(ClientLoadEvent, () => {
   });
 });
 /**
+ * 
+                //     let waveMax = Math.max(
+                //       selectedSector.info.winWave,
+                //       selectedSector.isBeingPlayed()
+                //         ? state.wave
+                //         : selectedSector.info.wave + selectedSector.info.wavesPassed) + Math.floor((Math.random() * (20 - 10)) + 10);
+
+                //     if(selectedSector.isBeingPlayed()) {
+                //       state.rules.winWave = waveMax;
+                //       state.rules.waves = true;
+                //       state.rules.attackMode = false;
+                //     } else {
+                //       selectedSector.info.winWave = waveMax;
+                //       selectedSector.info.waves = true;
+                //       selectedSector.info.attack = false;
+                //       selectedSector.saveInfo();
+                //     }
  //serpulo presets
 const goldMountains = new SectorPreset("goldMountains", Planets.serpulo, 172);
 goldMountains.captureWave = 30;
