@@ -26,15 +26,6 @@ Events.on(ClientLoadEvent, () => {
         cons((t) => {
           t.top().right();
           t.defaults().size(200, 54);
-          t.button("Redirect", Icon.upOpen, () => {
-            let sectors = Planets.serpulo.sectors;
-            let groundZero = sectors.get(15);
-            uiPlanet.showSelect(groundZero, (selectedSector) => {
-              sectors.each((e) => {
-                e.info.destination = selectedSector;
-              });
-            });
-          });
 
           // One Click All Sectors Destination Sector Redirect
           t.button("Redirect", Icon.upOpen, () => {
