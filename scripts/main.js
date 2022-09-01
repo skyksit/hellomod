@@ -1,22 +1,22 @@
-Events.on(ClientLoadEvent, () => {
-  var winWave = Vars.state.rules.winWave;
-  var sectors = Planets.serpulo.sectors;
+// Events.on(ClientLoadEvent, () => {
+//   var winWave = Vars.state.rules.winWave;
+//   var sectors = Planets.serpulo.sectors;
 
-  var s223 = sectors.items[223];
+//   var s223 = sectors.items[223];
 
-  const myDialog = new BaseDialog("Dialog Title");
-  // Add "go back" button
-  myDialog.addCloseButton();
-  // Add text to the main content
-  myDialog.cont.add("sectors[223].info.wave = " + s223.info.wave + "\n");
-  myDialog.cont.add(
-    "Vars.state.rules.winWave = " + Vars.state.rules.winWave + "\n"
-  );
-  // Show dialog
-  myDialog.show();
-  //Toast message example
-  // Vars.ui.hudfrag.showToast("Hello World!");
-});
+//   const myDialog = new BaseDialog("Dialog Title");
+//   // Add "go back" button
+//   myDialog.addCloseButton();
+//   // Add text to the main content
+//   myDialog.cont.add("sectors[223].info.wave = " + s223.info.wave + "\n");
+//   myDialog.cont.add(
+//     "Vars.state.rules.winWave = " + Vars.state.rules.winWave + "\n"
+//   );
+//   // Show dialog
+//   myDialog.show();
+//   //Toast message example
+//   // Vars.ui.hudfrag.showToast("Hello World!");
+// });
 
 Events.on(ClientLoadEvent, () => {
   let uiPlanet = Vars.ui.planet;
@@ -42,24 +42,36 @@ Events.on(ClientLoadEvent, () => {
             let sectors = Planets.serpulo.sectors;
             let groundZero = sectors.get(15);
             let varsState = Vars.state;
-            Vars.ui.hudfrag.showToast("varsState.wave = " + varsState.wave);
+
             uiPlanet.showSelect(groundZero, (selectedSector) => {
               let selectedSectorWave = selectedSector.isBeingPlayed()
                 ? varsState.wave
                 : selectedSector.info.wave + selectedSector.info.wavesPassed;
-              Vars.ui.hudfrag.showToast(
-                "selectedSectorWave = " + selectedSectorWave
-              );
-              let waveMax = Math.max(
-                selectedSector.info.winWave,
-                selectedSectorWave
-              );
+
+              let waveMax =
+                Math.max(selectedSector.info.winWave, selectedSectorWave) +
+                Math.floor(Math.random() * (20 - 10) + 10);
+
               Vars.ui.hudfrag.showToast("waveMax = " + waveMax);
+              Vars.ui.hudfrag.showToast(
+                "selectedSector.isBeingPlayed() = " +
+                  selectedSector.isBeingPlayed()
+              );
+
+              if (selectedSector.isBeingPlayed()) {
+                varsState.rules.winWave = waveMax;
+                varsState.rules.waves = true;
+                varsState.rules.attackMode = false;
+              } else {
+                selectedSector.info.winWave = waveMax;
+                selectedSector.info.waves = true;
+                selectedSector.info.attack = false;
+              }
               Events.fire(new SectorInvasionEvent(selectedSector));
             });
           });
         })
-      )
+      );
     }
   });
 });
