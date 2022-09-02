@@ -55,14 +55,13 @@ Events.on(ClientLoadEvent, () => {
           t.button("Respawn", Icon.upOpen, () => {
             let sectors = Planets.serpulo.sectors;
             let groundZero = sectors.get(15);
-            uiPlanet.showSelect(groundZero, (selectedSector) => {
-              selectedSector.generateEnemyBase = true;
-              selectedSector.saveInfo();
+            let selectedSector = uiPlanet.selected;
+            selectedSector.generateEnemyBase = true;
+            selectedSector.saveInfo();
 
-              Vars.ui.hudfrag.showToast(
-                `Enemy Base respawn in ${selectedSector.name()} `
-              );
-            });
+            Vars.ui.hudfrag.showToast(
+              `Enemy Base respawn in ${selectedSector.name()} `
+            );
           });
         })
       );
