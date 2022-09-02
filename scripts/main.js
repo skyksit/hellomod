@@ -1,22 +1,5 @@
-// Events.on(ClientLoadEvent, () => {
-//   var winWave = Vars.state.rules.winWave;
-//   var sectors = Planets.serpulo.sectors;
-
-//   var s223 = sectors.items[223];
-
-//   const myDialog = new BaseDialog("Dialog Title");
-//   // Add "go back" button
-//   myDialog.addCloseButton();
-//   // Add text to the main content
-//   myDialog.cont.add("sectors[223].info.wave = " + s223.info.wave + "\n");
-//   myDialog.cont.add(
-//     "Vars.state.rules.winWave = " + Vars.state.rules.winWave + "\n"
-//   );
-//   // Show dialog
-//   myDialog.show();
-//   //Toast message example
-//   // Vars.ui.hudfrag.showToast("Hello World!");
-// });
+// maxSchematicSize
+Vars.maxSchematicSize = 512;
 
 Events.on(ClientLoadEvent, () => {
   let uiPlanet = Vars.ui.planet;
@@ -65,6 +48,20 @@ Events.on(ClientLoadEvent, () => {
                 selectedSector.saveInfo();
               }
               Events.fire(new SectorInvasionEvent(selectedSector));
+            });
+          });
+
+          // Enemy Base respawn When you click Sector
+          t.button("Respawn", Icon.upOpen, () => {
+            let sectors = Planets.serpulo.sectors;
+            let groundZero = sectors.get(15);
+            uiPlanet.showSelect(groundZero, (selectedSector) => {
+              selectedSector.generateEnemyBase = true;
+              selectedSector.saveInfo();
+
+              Vars.ui.hudfrag.showToast(
+                `Enemy Base respawn in ${selectedSector.name()} `
+              );
             });
           });
         })
