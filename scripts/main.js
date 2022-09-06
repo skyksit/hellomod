@@ -54,14 +54,19 @@ Events.on(ClientLoadEvent, () => {
           // Enemy Base respawn When you click Sector
           t.button("Respawn", Icon.upOpen, () => {
             let sectors = Planets.serpulo.sectors;
-            let groundZero = sectors.get(15);
             let selectedSector = uiPlanet.selected;
-            selectedSector.generateEnemyBase = true;
-            selectedSector.saveInfo();
+            if (!selectedSector.hasBase()) {
+              selectedSector.generateEnemyBase = true;
+              selectedSector.saveInfo();
 
-            Vars.ui.hudfrag.showToast(
-              `Enemy Base respawn in ${selectedSector.name()} `
-            );
+              Vars.ui.hudfrag.showToast(
+                `Enemy Base respawn in ${selectedSector.id} `
+              );
+            } else {
+              Vars.ui.hudfrag.showToast(
+                `Enemy Base already exists in ${selectedSector.id} `
+              );
+            }
           });
         })
       );
