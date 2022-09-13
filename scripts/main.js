@@ -1,3 +1,6 @@
+//planet
+require("planet/helloworld");
+
 // maxSchematicSize
 Vars.maxSchematicSize = 512;
 
