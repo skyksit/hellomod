@@ -15,21 +15,19 @@ Events.on(ClientLoadEvent, () => {
 
           // One Click All Sectors Destination Sector Redirect
           t.button("Redirect", Icon.upOpen, () => {
-            let sectors = Planets.serpulo.sectors;
-            let groundZero = sectors.get(15);
-            uiPlanet.showSelect(groundZero, (selectedSector) => {
+            let selectedSector = uiPlanet.selected;
+            let sectors = selectedSector.planet.sectors;
               sectors.each((e) => {
                 e.info.destination = selectedSector;
               });
-            });
           });
+
           // Invasion Sector when you click Sector
           t.button("Invasion", Icon.upOpen, () => {
-            let sectors = Planets.serpulo.sectors;
-            let groundZero = sectors.get(15);
+            let selectedSector = uiPlanet.selected;
+            let sectors = selectedSector.planet.sectors;
             let varsState = Vars.state;
 
-            uiPlanet.showSelect(groundZero, (selectedSector) => {
               let selectedSectorWave = selectedSector.isBeingPlayed()
                 ? varsState.wave
                 : selectedSector.info.wave + selectedSector.info.wavesPassed;
@@ -51,15 +49,14 @@ Events.on(ClientLoadEvent, () => {
                 selectedSector.saveInfo();
               }
               Events.fire(new SectorInvasionEvent(selectedSector));
-            });
           });
 
           // Enemy Base respawn When you click Sector
           t.button("Respawn", Icon.upOpen, () => {
-            let sectors = Planets.serpulo.sectors;
             let selectedSector = uiPlanet.selected;
             if (!selectedSector.hasBase()) {
               selectedSector.generateEnemyBase = true;
+              selectedSector.threat = 1;
               selectedSector.saveInfo();
 
               Vars.ui.hudfrag.showToast(
