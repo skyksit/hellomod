@@ -3,9 +3,8 @@
 const helloPlanetaryTerminal = new SectorPreset(
   "planetaryTerminal",
   Planets.helloworld,
-  1
+  100
 );
-helloPlanetaryTerminal.addStartingItems = true;
 helloPlanetaryTerminal.captureWave = 30;
 helloPlanetaryTerminal.difficulty = 10;
 
