@@ -1,7 +1,7 @@
 //planet
 require("planet/helloworld");
 //campaign
-require("campaign/helloworld");
+// require("campaign/helloworld");
 
 // maxSchematicSize
 Vars.maxSchematicSize = 512;
