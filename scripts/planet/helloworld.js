@@ -11,9 +11,9 @@ helloWorld.enemyCoreSpawnReplace = true;
 helloWorld.allowLaunchLoadout = true;
 helloWorld.alwaysUnlocked = true;
 helloWorld.localizedName = "HelloWorld";
-// helloWorld.hiddenItems
-//   .addAll(Items.erekirOnlyItems)
-//   .removeAll(Items.serpuloItems);
+helloWorld.hiddenItems
+  .addAll(Items.erekirOnlyItems)
+  .removeAll(Items.serpuloItems);
 
 // goldMountains.captureWave = 30;
 // goldMountains.difficulty = 4;
