@@ -22,12 +22,15 @@ Events.on(ClientLoadEvent, () => {
             sectors.each((e) => {
               e.info.destination = selectedSector;
             });
+            // serpulo to helloworld but helloworld to serpulo is not active
+            Planets.serpulo.sectors.each((e) => {
+              e.info.destination = selectedSector;
+            });
           });
 
           // Invasion Sector when you click Sector
           t.button("Invasion", Icon.upOpen, () => {
             let selectedSector = uiPlanet.selected;
-            let sectors = selectedSector.planet.sectors;
             let varsState = Vars.state;
 
             let selectedSectorWave = selectedSector.isBeingPlayed()
@@ -58,6 +61,7 @@ Events.on(ClientLoadEvent, () => {
             let selectedSector = uiPlanet.selected;
             if (!selectedSector.hasBase()) {
               selectedSector.generateEnemyBase = true;
+              //sector difficulty 10
               selectedSector.threat = 1;
               selectedSector.saveInfo();
 
