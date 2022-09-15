@@ -1,14 +1,14 @@
 //Gold-mod 참조
 //helloworld presets
-const helloWorld = require("../planet/helloworld");
+// const helloWorld = require("../planet/helloworld");
 
-const hPlanetaryTerminal = new SectorPreset(
-  "hPlanetaryTerminal",
-  helloWorld,
-  100
-);
-helloPlanetaryTerminal.captureWave = 70;
-helloPlanetaryTerminal.difficulty = 10;
+// const hPlanetaryTerminal = new SectorPreset(
+//   "hPlanetaryTerminal",
+//   helloWorld,
+//   100
+// );
+// helloPlanetaryTerminal.captureWave = 70;
+// helloPlanetaryTerminal.difficulty = 10;
 
 // const goldMines = new SectorPreset("goldMines", Planets.serpulo, 205);
 // goldMines.difficulty = 7;
@@ -25,6 +25,6 @@ helloPlanetaryTerminal.difficulty = 10;
 // reignLair.captureWave = 30;
 // reignLair.difficulty = 10;
 
-module.exports = {
-  hPlanetaryTerminal: hPlanetaryTerminal,
-};
+// module.exports = {
+//   hPlanetaryTerminal: hPlanetaryTerminal,
+// };

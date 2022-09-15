@@ -15,10 +15,6 @@ helloWorld.hiddenItems
   .addAll(Items.erekirOnlyItems)
   .removeAll(Items.serpuloItems);
 
-helloWorld.sectors.each((e) => {
-  e.threat = 1;
-  e.saveInfo();
-});
 // goldMountains.captureWave = 30;
 // goldMountains.difficulty = 4;
 
