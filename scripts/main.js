@@ -1,5 +1,7 @@
 //planet
 require("planet/helloworld");
+//campaign
+require("campaign/helloworld");
 
 // maxSchematicSize
 Vars.maxSchematicSize = 512;
@@ -17,9 +19,9 @@ Events.on(ClientLoadEvent, () => {
           t.button("Redirect", Icon.upOpen, () => {
             let selectedSector = uiPlanet.selected;
             let sectors = selectedSector.planet.sectors;
-              sectors.each((e) => {
-                e.info.destination = selectedSector;
-              });
+            sectors.each((e) => {
+              e.info.destination = selectedSector;
+            });
           });
 
           // Invasion Sector when you click Sector
@@ -28,27 +30,27 @@ Events.on(ClientLoadEvent, () => {
             let sectors = selectedSector.planet.sectors;
             let varsState = Vars.state;
 
-              let selectedSectorWave = selectedSector.isBeingPlayed()
-                ? varsState.wave
-                : selectedSector.info.wave + selectedSector.info.wavesPassed;
+            let selectedSectorWave = selectedSector.isBeingPlayed()
+              ? varsState.wave
+              : selectedSector.info.wave + selectedSector.info.wavesPassed;
 
-              let waveMax =
-                Math.max(selectedSector.info.winWave, selectedSectorWave) +
-                Math.floor(Math.random() * (20 - 10) + 10);
+            let waveMax =
+              Math.max(selectedSector.info.winWave, selectedSectorWave) +
+              Math.floor(Math.random() * (20 - 10) + 10);
 
-              Vars.ui.hudfrag.showToast("waveMax = " + waveMax);
+            Vars.ui.hudfrag.showToast("waveMax = " + waveMax);
 
-              if (selectedSector.isBeingPlayed()) {
-                varsState.rules.winWave = waveMax;
-                varsState.rules.waves = true;
-                varsState.rules.attackMode = false;
-              } else {
-                selectedSector.info.winWave = waveMax;
-                selectedSector.info.waves = true;
-                selectedSector.info.attack = false;
-                selectedSector.saveInfo();
-              }
-              Events.fire(new SectorInvasionEvent(selectedSector));
+            if (selectedSector.isBeingPlayed()) {
+              varsState.rules.winWave = waveMax;
+              varsState.rules.waves = true;
+              varsState.rules.attackMode = false;
+            } else {
+              selectedSector.info.winWave = waveMax;
+              selectedSector.info.waves = true;
+              selectedSector.info.attack = false;
+              selectedSector.saveInfo();
+            }
+            Events.fire(new SectorInvasionEvent(selectedSector));
           });
 
           // Enemy Base respawn When you click Sector
