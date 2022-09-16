@@ -1,6 +1,9 @@
 //Gold-mod 참조
 //helloworld presets
-// const helloWorld = require("../planet/helloworld");
+const helloWorld = require("../planet/helloworld");
+
+helloWorld.sectors.get(98).threat = 1;
+
 
 // const hPlanetaryTerminal = new SectorPreset(
 //   "hPlanetaryTerminal",
