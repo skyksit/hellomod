@@ -2,8 +2,7 @@
 //helloworld presets
 const helloWorld = require("hellomod/planet/helloworld");
 
-helloWorld.sectors.get(98).threat = 1;
-
+helloWorld.sectors.items[99].threat = 1;
 
 // const hPlanetaryTerminal = new SectorPreset(
 //   "hPlanetaryTerminal",

@@ -12,9 +12,8 @@ helloWorld.allowLaunchLoadout = true;
 helloWorld.alwaysUnlocked = true;
 helloWorld.localizedName = "HelloWorld";
 helloWorld.accessible = true;
-helloWorld.sectors.items[99].threat = 1;
 
-Planets.serpulo.launchCandidates.add(helloWorld);
+// Planets.serpulo.launchCandidates.add(helloWorld);
 
 // helloWorld.hiddenItems
 //   .addAll(Items.erekirOnlyItems)
