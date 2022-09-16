@@ -1,0 +1,28 @@
+type: Drill
+drawRim: true
+hasItems: true
+hasliquid: true
+itemCapacity: 20
+liquidCapacity: 2
+liquidBoostIntensity: 3.0
+updateEffect: pulverizeMedium
+drillEffect: mineBig
+tier: 5
+drillTime: 250
+size: 3
+requirements: [
+   silicon/50
+   thorium/50
+   plastanium/30
+]
+consumes: {
+   power: 1.5
+   liquid: {
+      liquid: water
+      amount: 0.1
+      optional: true
+      booster: true
+   }
+}
+category: production
+research: laser-drill
