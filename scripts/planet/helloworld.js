@@ -11,6 +11,9 @@ helloWorld.enemyCoreSpawnReplace = true;
 helloWorld.allowLaunchLoadout = true;
 helloWorld.alwaysUnlocked = true;
 helloWorld.localizedName = "HelloWorld";
+
+helloWorld.sectors.get(99).threat = 1;
+
 // helloWorld.hiddenItems
 //   .addAll(Items.erekirOnlyItems)
 //   .removeAll(Items.serpuloItems);
