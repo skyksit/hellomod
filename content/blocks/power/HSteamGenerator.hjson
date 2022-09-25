@@ -3,7 +3,7 @@ health: 1200
 size: 3
 hasItems: true
 hasLiquids: true
-itemDuration: 180
+itemDuration: 1800
 powerProduction: 15
 itemCapacity: 10
 liquidCapacity: 30
@@ -14,12 +14,12 @@ requirements: [
 consumes: {
   items: {
     items: [
-      thorium/0.1
+      thorium/1
     ]
   }
   liquid: {
     liquid: water
-    amount: 0.1
+    amount: 1
   }
 }
 ambientSound: smelter
