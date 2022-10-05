@@ -13,7 +13,7 @@ Events.on(ClientLoadEvent, () => {
       uiPlanet.fill(
         cons((t) => {
           t.top().right();
-          t.defaults().size(200, 54);
+          t.defaults().size(180, 45);
 
           // One Click All Sectors Destination Sector Redirect
           t.button("Redirect", Icon.upOpen, () => {
